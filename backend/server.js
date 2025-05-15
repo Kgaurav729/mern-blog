@@ -8,7 +8,7 @@ connectDB();
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'https://magical-choux-f0b92c.netlify.app'],
   credentials: true // if you’re using cookies/auth headers
 }));
 app.use(express.json());
