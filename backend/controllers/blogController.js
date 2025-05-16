@@ -1,7 +1,6 @@
 const Blog = require('../models/Blog');
 const User = require('../models/User');
 
-// GET /blogs?category=&author=
 exports.getAllBlogs = async (req, res) => {
   try {
     const { category, author } = req.query;
@@ -17,13 +16,12 @@ exports.getAllBlogs = async (req, res) => {
   }
 };
 
-// POST /blogs
+
 exports.createBlog = async (req, res) => {
   const { title, category, content, image } = req.body;
 
   try {
-    const user = await User.findById(req.user); // req.user set by auth middleware
-
+    const user = await User.findById(req.user); 
     const blog = new Blog({
       title,
       category,
@@ -40,7 +38,6 @@ exports.createBlog = async (req, res) => {
   }
 };
 
-// PUT /blogs/:id
 exports.updateBlog = async (req, res) => {
   const { id } = req.params;
 
@@ -63,7 +60,6 @@ exports.updateBlog = async (req, res) => {
   }
 };
 
-// DELETE /blogs/:id
 exports.deleteBlog = async (req, res) => {
   const { id } = req.params;
 

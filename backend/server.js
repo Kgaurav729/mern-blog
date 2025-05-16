@@ -9,11 +9,10 @@ connectDB();
 const app = express();
 app.use(cors({
   origin: ['http://localhost:3000', 'https://magical-choux-f0b92c.netlify.app'],
-  credentials: true // if you’re using cookies/auth headers
+  credentials: true 
 }));
 app.use(express.json());
 
-// Routes
 app.use('/auth', require('./routes/authRoutes'));
 app.use('/blogs', require('./routes/blogRoutes'));
 

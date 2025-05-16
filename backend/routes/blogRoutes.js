@@ -8,7 +8,6 @@ const {
   deleteBlog
 } = require('../controllers/blogController');
 
-// Protected Routes
 router.get('/', auth, getAllBlogs);
 router.post('/', auth, createBlog);
 router.put('/:id', auth, updateBlog);
